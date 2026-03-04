@@ -1,0 +1,870 @@
+/* Estilos para los elementos body y html */
+body, html {
+    height: 100%; /* Altura del cuerpo y del documento HTML al 100% de la ventana del navegador */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    font-family: Arial, sans-serif; /* Fuente predeterminada Arial */
+    background-image: url('../CSS/background.avif');
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-position: center; /* Centra la imagen */
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    height: 100%; /* Altura del contenedor al 100% de su elemento padre */
+    display: flex; /* Diseño flexible */
+    flex-direction: column; /* Elementos hijos apilados verticalmente */
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    justify-content: center; /* Centra los elementos hijos verticalmente */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.header-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.logo-img-Zabbix {
+    height: 100px;
+    width: auto;
+}
+
+.logo-img-SONDA {
+    height: 100px;
+    width: auto;
+    filter: drop-shadow(0 0 10px white); /* Contorno blanco suave */
+
+}
+
+
+
+.title h1 {
+    color: white;
+    font-size: 2.4em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.description h3 {
+    color: white;
+    font-size: 0.9em;
+}
+
+
+/* Estilo para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ancho al 100% del contenedor */
+    max-width: 600px; /* Ancho máximo del formulario */
+}
+
+/* Estilo para el campo de búsqueda de grupos */
+#group-search {
+    max-width: 400px; /* Aumenta el ancho máximo del campo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 0 auto; /* Centra el campo horizontalmente dentro del formulario */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+
+/* Estilo para el campo de búsqueda de grupos */
+#problem-search {
+    width: calc(100% - 100px); /* Ajusta el ancho al 100% del contenedor menos un margen extra */
+    max-width: 400px; /* Aumenta el ancho máximo del campo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 0 auto; /* Centra el campo horizontalmente dentro del formulario */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+
+/* Cambiar el borde del campo de búsqueda al enfocar */
+#group-search:focus {
+    border-color: #4a90e2; /* Color del borde al enfocar */
+    outline: none; /* Sin contorno */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Sombra suave al enfocar */
+}
+
+/* Cambiar el borde del campo de búsqueda al enfocar */
+#problem-search:focus {
+    border-color: #4a90e2; /* Color del borde al enfocar */
+    outline: none; /* Sin contorno */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Sombra suave al enfocar */
+}
+
+/* Estilo para el contenedor de los campos de fecha */
+.date-container {
+    display: flex;
+    flex-direction: row; /* Campos apilados verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 10px; /* Espacio entre los campos */
+    margin-top: 10px;
+    width: 100%; /* Ancho al 100% */
+    justify-content: center; /* Centra los campos de fecha horizontalmente */
+}
+
+/* Estilo para los campos de fecha */
+.date-field, #start-date, #end-date, #dropdown-menu{
+    width: 100%; /* Ancho al 100% */
+    max-width: 300px; /* Ancho máximo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: all 0.3s ease; /* Transición suave */
+    flex: 1; /* Permite que cada campo de fecha ocupe el mismo espacio */
+}
+
+/* Cambiar el borde del campo de fecha al enfocar */
+#start-date:focus, #end-date:focus {
+    border-color: #4a90e2; /* Color del borde al enfocar */
+    outline: none; /* Sin contorno */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Sombra suave al enfocar */
+}
+
+/* Estilo para el botón de limpiar fechas */
+#clear-dates {
+    background-color: transparent; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor pointer */
+    font-size: 18px; /* Tamaño del icono */
+    color: #e94e77; /* Color del icono */
+    transition: color 0.3s ease; /* Transición suave */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+/* Cambiar el color del icono al pasar el ratón */
+#clear-dates:hover {
+    color: #d43f77; /* Color del icono al pasar el ratón */
+}
+
+/* Estilo para el contenedor de los grupos y severidades seleccionados */
+#selected-groups, #selected-severities {
+    display: flex;
+    flex-wrap: wrap; /* Permite envolver los elementos */
+    gap: 5px; /* Espacio entre los elementos */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+/* Estilo para cada grupo y severidad seleccionada */
+.group, .severity {
+    font-size: 0.9em; /* Tamaño de fuente */
+    padding: 5px 10px; /* Espaciado interno */
+    background-color: #f0f0f0; /* Color de fondo */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para el icono de eliminación */
+.group span.remove-group, .severity span.remove-severity {
+    color: red;
+    margin-left: 5px; /* Espaciado entre el nombre y el icono */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Cambiar el cursor al pasar sobre la X */
+.group span.remove-group:hover, .severity span.remove-severity:hover {
+    cursor: pointer;
+}
+
+/* Estilo para el icono de eliminación */
+.group span.remove-problem, .severity span.remove-severity {
+    color: red;
+    margin-left: 5px; /* Espaciado entre el nombre y el icono */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Cambiar el cursor al pasar sobre la X */
+.group span.remove-problem:hover, .severity span.remove-severity:hover {
+    cursor: pointer;
+}
+
+/* Estilo general para los botones */
+button {
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor pointer */
+    transition: background-color 0.3s ease; /* Transición suave */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+/* Estilo para el botón de generar informe */
+#generate-report {
+    background-color: #4a90e2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    display: block; /* Ocupa toda la anchura disponible */
+    max-width: 300px; /* Ancho máximo */
+    margin: 10px auto; /* Centra el botón horizontalmente */
+}
+
+/* Cambiar el color del botón al pasar el ratón */
+#generate-report:hover {
+    background-color: #357abd; /* Fondo azul oscuro al pasar el ratón */
+}
+
+/* Estilo para el enlace de descarga */
+#download-report {
+    display: inline-block; /* Alineación en línea */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #4a90e2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    text-align: center; /* Alineación del texto */
+    margin-top: 10px; /* Espaciado superior */
+    max-width: 300px; /* Ancho máximo */
+    display: block; /* Ocupa toda la anchura disponible */
+    margin: 10px auto; /* Centra el enlace horizontalmente */
+}
+
+/* Cambiar el color del enlace al pasar el ratón */
+#download-report:hover {
+    background-color: #357abd; /* Fondo azul oscuro al pasar el ratón */
+}
+
+/* Estilo para los mensajes de estado */
+#status-message-container {
+    display: flex; /* Flexbox para alinear el texto y el icono horizontalmente */
+    align-items: center; /* Centra verticalmente el contenido del contenedor */
+    margin-top: 0px; /* Espaciado superior */
+    margin-bottom: 0px; /* Espaciado inferior */
+}
+
+.status-message {
+    font-weight: bold;
+    font-size: 1em; /* Tamaño de fuente */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes redondeados */
+    color: #FFFFFF; /* Texto blanco */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+}
+
+/* Estilos específicos para los mensajes de estado */
+.status-message_OK {
+    background-color: #4CAF50; /* Fondo verde para mensajes de éxito */
+}
+
+.status-message_ERROR {
+    background-color: #F44336; /* Fondo rojo para mensajes de error */
+}
+
+.status-message_INCOMPLETE {
+    background-color: #FF9800; /* Fondo naranja para mensajes incompletos */
+}
+
+.status-message_GENERATING {
+    background-color: #2196F3; /* Fondo azul para mensajes de generación */
+}
+
+
+/* Estilo adicional para asegurar la alineación */
+.form-container {
+    background: rgba(255, 255, 255, 0.596); /* Fondo blanco transparente */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes redondeados */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    width: 100%; /* Ancho al 100% */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+}
+
+
+
+/* Estilo para botones deshabilitados */
+button:disabled {
+    cursor: not-allowed; /* Cambia el cursor a un icono de no permitido */
+    opacity: 0.6; /* Cambia la opacidad para que el botón parezca inactivo */
+}
+
+/* Estilo para el menú desplegable de autocompletado */
+.ui-autocomplete {
+    border: 1px solid #ccc;
+    max-height: 200px; /* Altura máxima del menú */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+.ui-menu-item {
+    padding: 8px; /* Espaciado interno */
+    cursor: pointer; /* Cursor tipo pointer para elementos interactivos */
+}
+
+.ui-menu-item:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo para el dropdown de grupos */
+#dropdown-menu {
+    border: 1px solid #ccc; /* Borde del menú */
+    background-color: #fff; /* Fondo blanco */
+    position: absolute; /* Posición absoluta para superponer el menú */
+    z-index: 100; /* Asegura que el menú esté por encima de otros elementos */
+    max-height: 300px; /* Altura máxima del menú */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+    width: calc(100% - 2px); /* Ajusta el ancho del menú */
+    max-width: 350px; /* Ancho máximo del menú */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra del menú */
+    display: none; /* Asegúrate de que esté oculto por defecto */
+    transition: all 0.7s ease; /* Transición suave */
+    left: 50%; /* Posiciona el borde izquierdo del menú al centro del contenedor */
+    transform: translateX(-50%); /* Desplaza el menú a la izquierda para centrarlo */
+}
+
+#dropdown-menu div {
+    padding: 8px; /* Espaciado interno */
+    cursor: pointer; /* Cursor tipo pointer para elementos interactivos */
+}
+
+#dropdown-menu div:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo para los grupos seleccionados */
+.group {
+    display: inline-block; /* Alinea los elementos en línea */
+    padding: 5px 10px; /* Espaciado interno */
+    margin: 5px; /* Margen alrededor del grupo */
+    border: 1px solid #ccc; /* Borde del grupo */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #e0e0e0; /* Color de fondo */
+    position: relative; /* Posición relativa para el icono de eliminación */
+}
+
+/* Estilo para los problemas seleccionados */
+.problem {
+    display: inline-block; /* Alinea los elementos en línea */
+    padding: 5px 10px; /* Espaciado interno */
+    margin: 5px; /* Margen alrededor del grupo */
+    border: 1px solid #ccc; /* Borde del grupo */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #e0e0e0; /* Color de fondo */
+    position: relative; /* Posición relativa para el icono de eliminación */
+}
+
+.remove-group {
+    cursor: pointer; /* Cursor tipo pointer para el icono de eliminación */
+    color: #ff0000; /* Color del icono de eliminación */
+    font-weight: bold; /* Negrita */
+    margin-left: 5px; /* Espaciado a la izquierda del icono */
+}
+
+.remove-problem {
+    cursor: pointer; /* Cursor tipo pointer para el icono de eliminación */
+    color: #ff0000; /* Color del icono de eliminación */
+    font-weight: bold; /* Negrita */
+    margin-left: 5px; /* Espaciado a la izquierda del icono */
+}
+
+/* Estilo para el contenedor del mensaje de estado */
+#status-message-container {
+    margin-top: 7px; /* Espaciado superior */
+}
+
+/* Estilo para el pie de página */
+footer {
+    text-align: center; /* Alineación del texto al centro */
+    margin-top: 3px; /* Espaciado superior */
+    padding: 0; /* Sin espaciado interno */
+    color: #fff; /* Texto blanco */
+    font-size: 10px; /* Tamaño de fuente */
+}
+
+/* Estilo para los párrafos en el pie de página */
+footer p {
+    margin: 0; /* Sin margen */
+    display: flex; /* Diseño flexible */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+    font-size: 12px; /* Tamaño de fuente general */
+}
+
+/* Estilo para la firma en el pie de página */
+footer .firma {
+    display: block; /* Muestra el elemento como bloque */
+    margin-top: 0; /* Sin margen superior */
+    font-family: 'Freestyle Script', cursive; /* Fuente cursiva */
+    font-size: 35px; /* Tamaño de fuente */
+    color: #fff; /* Texto blanco */
+    margin-left: 10px; /* Espaciado a la izquierda */
+    font-weight: 400; /* O 700 para más grosor */
+
+}
+
+/* Estilo para el icono de carga */
+#loading-icon {
+    width: 70px; /* Ancho del icono */
+    height: 70px; /* Altura del icono */
+    vertical-align: middle; /* Alineación vertical en el centro */
+}
+
+/* Estilo para el contenedor del menú desplegable */
+#group-dropdown-menu, #problem-dropdown-menu {
+    display: none; /* Oculta el menú inicialmente */
+    position: absolute; /* Posiciona el menú sobre otros elementos */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: white; /* Fondo blanco */
+    max-height: 200px; /* Altura máxima */
+    max-width: 1000px; /* Altura máxima */
+    overflow-y: auto; /* Agrega scroll si es necesario */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilo para cada ítem del menú desplegable */
+#group-dropdown-menu div, #problem-dropdown-menu div {
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ítem */
+}
+
+#group-dropdown-menu div:hover, #problem-dropdown-menu div:hover {
+    background-color: #1491da; /* Fondo al pasar el cursor */
+}
+
+
+        .input-container {
+            position: relative; /* referencia para dropdown */
+            width: 100%;
+        }
+
+            #group-dropdown-menu,
+            #problem-dropdown-menu {
+                display: none; /* oculto por defecto */
+                position: absolute; /* posición relativa a .input-container */
+                top: 100%; /* justo debajo del input */
+                left: 0;
+                width: 100%; /* mismo ancho que el input */
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                background-color: white;
+                max-height: 200px;
+                overflow-y: auto;
+                z-index: 1000;
+            }
+
+
+
+        .form-container form {
+            display: flex;
+            flex-direction: column; /* Organiza los campos en columna */
+        }
+        
+        .form-container label {
+            margin-bottom: 1px; /* Espacio debajo de la etiqueta */
+        }
+        
+        .form-container input {
+            width: 100%; /* Ancho al 100% del contenedor */
+            max-width: 600px; /* Ajusta el ancho máximo */
+            padding: 10px; /* Espaciado interno */
+            border: 1px solid #ddd; /* Borde sutil */
+            border-radius: 4px; /* Bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+            margin-bottom: 10px; /* Espacio debajo de cada campo */
+            box-sizing: border-box; /* Incluye padding y border en el ancho total */
+        }
+        
+        .date-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px; /* Espacio entre los campos de fecha */
+        }
+
+        .date-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .date-field input {
+            width: calc(100% - 20px); /* Ajusta el ancho para incluir padding */
+        }
+
+        /* Estilo para el contenedor del mensaje de estado */
+        #status-message-container {
+            display: flex;
+            align-items: center; /* Alinea los elementos verticalmente */
+            width: 100%;
+            max-width: 600px; /* Ajusta según sea necesario */
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative; /* Asegura que los elementos hijos se posicionen de manera relativa */
+            box-sizing: border-box; /* Incluye padding y border en el ancho total */
+        }
+
+        /* Estilo para el mensaje de estado */
+        #status-message {
+            flex: 1; /* Ocupa el espacio disponible horizontalmente */
+            margin-right: 10px; /* Espacio entre el mensaje y el GIF */
+            padding: 10px;
+            box-sizing: border-box; /* Incluye padding y border en el ancho total */
+            overflow-wrap: break-word; /* Permite que el texto largo se ajuste al ancho */
+            white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+            background-color: #2260b365; /* Fondo gris claro */
+            border: 1px solid #0476e073; /* Borde sutil */
+            border-radius: 4px; /* Bordes redondeados */
+            max-height: 100px; /* Ajusta la altura máxima según el contenido esperado */
+            max-width: 300px; /* Ajusta el ancho máximo según tus necesidades */
+            text-align: left; /* Alinea el texto a la izquierda */
+            vertical-align: top; /* Alinea el texto a la parte superior */
+            display: none; /* Oculta el mensaje de estado inicialmente */
+        }
+
+        /* Estilo para el GIF de carga */
+        #loading-icon {
+            width: 70px; /* Ajusta según el tamaño del GIF */
+            height: 70px; /* Ajusta según el tamaño del GIF */
+            margin: 0 20px; /* Espacio entre el GIF y la barra de progreso */
+            display: none; /* Oculta el GIF inicialmente */
+        }
+
+        /* Estilo para el contenedor de la barra de progreso */
+        #progress-container {
+            display: flex;
+            flex-direction: column; /* Coloca los elementos uno encima del otro */
+            align-items: flex-start; /* Alinea el contenido a la izquierda */
+            margin-left: 20px; /* Espacio entre el GIF y la barra de progreso */
+            display: none; /* Oculta el contenedor de la barra de progreso inicialmente */
+            width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+        }
+
+        /* Estilo para la barra de progreso */
+        #progress-bar {
+            width: 100%; /* Ajusta el ancho según tus necesidades */
+            height: 20px;
+            border-radius: 5px;
+            appearance: none;
+            background-color: #e0e0e0; /* Fondo de la barra de progreso */
+            border: none;
+        }
+
+        #progress-bar::-webkit-progress-bar {
+            background-color: #e0e0e0; /* Fondo de la barra de progreso para WebKit */
+            border-radius: 5px;
+        }
+
+        #progress-bar::-webkit-progress-value {
+            background-color: #4caf50; /* Color del progreso para WebKit */
+            border-radius: 5px;
+        }
+
+        /* Estilo para el porcentaje de la barra de progreso */
+        #progress-percentage {
+            display: block; /* Asegúrate de que el porcentaje esté visible */
+            color: white;
+            font-weight: bold;
+            text-align: center; /* Centra el porcentaje horizontalmente */
+            margin-top: 5px; /* Espacio encima del porcentaje */
+        }
+
+
+/*Estilo Botones Menú Principal*/
+
+.buttonProblem {
+  display: inline-block;           /* Se comporta como un botón */
+  padding: 10px 24px;              /* Espaciado interno (ajusta según necesites) */
+  background-color: #0b74eb;       /* Color de fondo */
+  color: white;                    /* Color de texto */
+  text-decoration: none;           /* Quitar subrayado */
+  border: none;                    /* Sin borde */
+  border-radius: 8px;              /* Bordes redondeados */
+  cursor: pointer;                 /* Cursor de mano */
+  font-size: 16px;                 /* Tamaño del texto */
+  font-weight: bold;              /* Texto en negrita */
+  text-align: center;             /* Centra el texto horizontalmente */
+  white-space: nowrap;            /* 👈 Evita que el texto se divida en varias líneas */
+  box-sizing: border-box;         /* Incluye padding en el tamaño total */
+  transition: background-color 0.3s ease;
+}
+.buttonProblem:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el botón de Problemas*/
+#generate-reportProblem {
+    background-color: #4a90e2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    display: block; /* Ocupa toda la anchura disponible */
+    max-width: 300px; /* Ancho máximo */
+    margin: 10px auto; /* Centra el botón horizontalmente */
+}
+
+/* Cambiar el color del botón al pasar el ratón */
+#generate-reportProblem:hover {
+    background-color: #d42013; /* Fondo azul oscuro al pasar el ratón */
+}
+
+/* Estilo para el botón de Linea Base*/
+.buttonBaseLine {
+  display: inline-block;           /* Se comporta como un botón */
+  padding: 10px 24px;              /* Espaciado interno (ajusta según necesites) */
+  background-color: #0b74eb;       /* Color de fondo */
+  color: white;                    /* Color de texto */
+  text-decoration: none;           /* Quitar subrayado */
+  border: none;                    /* Sin borde */
+  border-radius: 8px;              /* Bordes redondeados */
+  cursor: pointer;                 /* Cursor de mano */
+  font-size: 16px;                 /* Tamaño del texto */
+  font-weight: bold;              /* Texto en negrita */
+  text-align: center;             /* Centra el texto horizontalmente */
+  white-space: nowrap;            /* 👈 Evita que el texto se divida en varias líneas */
+  box-sizing: border-box;         /* Incluye padding en el tamaño total */
+  transition: background-color 0.3s ease;
+}
+.buttonBaseLine:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el botón de Problemas*/
+#generate-reportBaseLine {
+    background-color: #4a90e2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    display: block; /* Ocupa toda la anchura disponible */
+    max-width: 300px; /* Ancho máximo */
+    margin: 10px auto; /* Centra el botón horizontalmente */
+}
+
+/* Cambiar el color del botón al pasar el ratón */
+#generate-reportBaseLine:hover {
+    background-color: #35e40a; /* Fondo azul oscuro al pasar el ratón */
+}
+
+
+/* Estilo para el botón de Disponibilidad*/
+.buttonAlvailability {
+  display: inline-block;           /* Se comporta como un botón */
+  padding: 10px 24px;              /* Espaciado interno (ajusta según necesites) */
+  background-color: #0b74eb;       /* Color de fondo */
+  color: white;                    /* Color de texto */
+  text-decoration: none;           /* Quitar subrayado */
+  border: none;                    /* Sin borde */
+  border-radius: 8px;              /* Bordes redondeados */
+  cursor: pointer;                 /* Cursor de mano */
+  font-size: 16px;                 /* Tamaño del texto */
+  font-weight: bold;              /* Texto en negrita */
+  text-align: center;             /* Centra el texto horizontalmente */
+  white-space: nowrap;            /* 👈 Evita que el texto se divida en varias líneas */
+  box-sizing: border-box;         /* Incluye padding en el tamaño total */
+  transition: background-color 0.3s ease;
+}
+.buttonAlvailability:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el botón de Problemas*/
+#generate-reportAlvailability {
+    background-color: #4a90e2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    display: block; /* Ocupa toda la anchura disponible */
+    max-width: 300px; /* Ancho máximo */
+    margin: 10px auto; /* Centra el botón horizontalmente */
+}
+
+/* Cambiar el color del botón al pasar el ratón */
+#generate-reportAlvailability:hover {
+    background-color: #ebc108; /* Fondo azul oscuro al pasar el ratón */
+}
+
+/* Estilo para el botón de Metricas*/
+.buttonMetrics {
+  display: inline-block;           /* Se comporta como un botón */
+  padding: 10px 24px;              /* Espaciado interno (ajusta según necesites) */
+  background-color: #0b74eb;       /* Color de fondo */
+  color: white;                    /* Color de texto */
+  text-decoration: none;           /* Quitar subrayado */
+  border: none;                    /* Sin borde */
+  border-radius: 8px;              /* Bordes redondeados */
+  cursor: pointer;                 /* Cursor de mano */
+  font-size: 16px;                 /* Tamaño del texto */
+  font-weight: bold;              /* Texto en negrita */
+  text-align: center;             /* Centra el texto horizontalmente */
+  white-space: nowrap;            /* 👈 Evita que el texto se divida en varias líneas */
+  box-sizing: border-box;         /* Incluye padding en el tamaño total */
+  transition: background-color 0.3s ease;
+}
+
+.buttonMetrics:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el botón de Problemas*/
+#generate-reportMetrics {
+    background-color: #4a90e2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    display: block; /* Ocupa toda la anchura disponible */
+    max-width: 300px; /* Ancho máximo */
+    margin: 10px auto; /* Centra el botón horizontalmente */
+}
+
+/* Cambiar el color del botón al pasar el ratón */
+#generate-reportMetrics:hover {
+    background-color: #f74a05; /* Fondo azul oscuro al pasar el ratón */
+}
+
+/*Estilo Form Menù Principal*/
+.form-containerMenu {
+    width: 100%;
+    max-width: 800px;
+
+    background: transparent; /* Fondo transparente */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Borde glass */
+    backdrop-filter: blur(20px); /* 🔥 Efecto blur fuerte */
+    -webkit-backdrop-filter: blur(20px); /* Safari */
+    
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2); /* Sombra suave */
+    color: #fff; /* Texto blanco (puedes cambiarlo al gusto) */
+    
+    border-radius: 25px;
+    padding: 30px 40px;
+    
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+.form-containerMenu form {
+    display: flex;
+    flex-direction: row; /* Organiza los campos en columna */
+    justify-content: center; /* Centra los botones */
+    gap: 20px; /* 👈 Espaciado horizontal entre botones */
+
+}
+
+.form-containerMenu label {
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+}
+
+.form-container input {
+    width: 100%; /* Ancho al 100% del contenedor */
+    max-width: 400px; /* Ajusta el ancho máximo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Espacio debajo de cada campo */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;  /* Centra el grupo */
+    gap: 16px;                /* Espacio entre botones */
+    margin-top: 20px;         /* Separación del formulario */
+}
+
+.buttonBack {
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.buttonBack:hover {
+    background-color: #bbb;
+}
+
+#generate-report {
+    padding: 10px 20px;
+    background-color: #0b74eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#generate-report:hover {
+    background-color: #084dad;
+}
+
+
+.buttonLogout {
+    padding: 10px 20px;
+    background-color: #ca3333;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+.buttonLogout:hover {
+    background-color: #000000;
+    color: #ffffff; /* ← Cambia el texto a blanco */
+}
+
+
+/*Ventana Emergente*/
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 12px 18px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    animation: fadeInOut 4s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(20px); }
+    10% { opacity: 1; transform: translateX(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(20px); }
+}
+
+/* Colores predefinidos */
+.toast-success { background-color: #28a745; }
+.toast-warning { background-color: #ffc107; color: black; }
+.toast-error { background-color: #dc3545; }
+.toast-info { background-color: #626666; }
+
+
+
+
+

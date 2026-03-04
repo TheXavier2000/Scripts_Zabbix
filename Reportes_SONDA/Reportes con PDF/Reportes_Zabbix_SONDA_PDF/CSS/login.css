@@ -1,0 +1,205 @@
+body, html {
+    height: 100%; /* Altura del cuerpo y del documento HTML al 100% de la ventana del navegador */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    font-family: Arial, sans-serif; /* Fuente predeterminada Arial */
+    background-image: url('../CSS/background.avif');
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-position: center; /* Centra la imagen */
+    margin: 0;
+    padding: 0;
+
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://i.gifer.com/VJi.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);       
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* input izquierda / icono derecha */
+    border-bottom: 2px solid #fff;
+    margin: 20px 0;
+    padding: 5px 10px;
+}
+
+
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(245, 245, 245, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fffcfc;
+    padding: 20px 45px 20px 20px
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    right: 5px;
+    top: 37%;
+    transform: translate(-50%);
+    font-size: 20px;
+}
+
+.wrapper .remember-forgot{
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #f0f1f0;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link{
+    font-size: 14.5px;
+    text-align: center;
+   margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color:#fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el pie de página */
+footer {
+    text-align: center; /* Alineación del texto al centro */
+    margin-top: 3px; /* Espaciado superior */
+    padding: 0; /* Sin espaciado interno */
+    color: #fff; /* Texto blanco */
+    font-size: 10px; /* Tamaño de fuente */
+}
+
+/* Estilo para los párrafos en el pie de página */
+footer p {
+    margin: 0; /* Sin margen */
+    display: flex; /* Diseño flexible */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+    font-size: 12px; /* Tamaño de fuente general */
+}
+
+/* Estilo para la firma en el pie de página */
+footer .firma {
+    display: block; /* Muestra el elemento como bloque */
+    margin-top: 0; /* Sin margen superior */
+    font-family: 'Freestyle Script', cursive; /* Fuente cursiva */
+    font-size: 35px; /* Tamaño de fuente */
+    color: #fff; /* Texto blanco */
+    margin-left: 10px; /* Espaciado a la izquierda */
+    font-weight: 400; /* O 700 para más grosor */
+
+}
+
+/*Ventana Emergente*/
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 12px 18px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    animation: fadeInOut 4s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(20px); }
+    10% { opacity: 1; transform: translateX(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(20px); }
+}
+
+/* Colores predefinidos */
+.toast-success { background-color: #28a745; }
+.toast-warning { background-color: #ffc107; color: black; }
+.toast-error { background-color: #dc3545; }
+.toast-info { background-color: #626666; }

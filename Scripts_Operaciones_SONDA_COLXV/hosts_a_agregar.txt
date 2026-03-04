@@ -1,0 +1,3 @@
+Acesco_Guayaquil_WAN_1_8.242.162.157	8.242.162.157
+Acesco_Guayaquil_WAN2_8.242.90.177	8.242.90.177
+Acesco_Guayaquil_LOOPBACK_8.242.162.209	8.242.162.209

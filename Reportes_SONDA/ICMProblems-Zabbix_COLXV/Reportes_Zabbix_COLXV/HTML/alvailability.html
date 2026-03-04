@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../CSS/icon.png" type="image/x-icon">
+    <title>Generador de Informes de Problemas</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header-logos">
+            <img src="../CSS/zabbix-logo.png" alt="Logo Zabbix" class="logo-img-Zabbix">
+            <img src="../CSS/LogoSonda.png" alt="Logo Empresa" class="logo-img-SONDA">
+        </div>
+
+        <div class="title">
+            <h1>Generador de Informes de Disponibilidad</h1>
+        </div>
+        <div class="description">
+            <h3>Seleccione el grupo de equipos y rango de tiempo en donde desea obtener la disponibilidad:</h3>
+        </div>
+        <div class="form-container">
+            <form>
+                <label for="group-search">Seleccione los grupos de equipos:</label>
+                <input id="group-search" placeholder="" readonly>
+                <div id="selected-groups"></div>
+                <input type="hidden" id="selected-group-ids">
+                <div id="group-dropdown-menu"></div> <!-- El dropdown de grupos estará aquí -->
+
+                <div class="date-container">
+                    <div class="date-field">
+                        <label for="start-date">Fecha de inicio:</label>
+                        <input type="text" id="start-date" name="start-date" readonly>
+                    </div>
+                    <div class="date-field">
+                        <label for="end-date">Fecha final:</label>
+                        <input type="text" id="end-date" name="end-date" readonly>
+                    </div>
+                </div>
+            </form>
+            
+        <div class="button-group">
+            <a href="index.html" id="generate-reportBack" class="buttonBack">↩ Volver</a>   
+            <button type="button" id="generate-report">Generar Informe</button>
+        </div>
+        
+        </div>
+        <div id="status-message-container">
+            <span id="status-message"></span>
+            <img id="loading-icon" src="../CSS/loading.gif" alt="Loading...">
+            <div id="progress-container">
+                <progress id="progress-bar" value="0" max="100"></progress>
+                <span id="progress-percentage">0%</span>
+            </div>
+        </div>
+        <footer>
+            <p>SONDA Colombia &reg; 2025 - Develop by: <span class="firma">Ing. V L</span></p>
+        </footer>
+    </div>
+
+    <script src="../scripts/dates.js" defer></script>
+    <script src="../scripts/jsonQueries.js" defer></script>
+    <script src="../scripts/filters.js" defer></script>
+    <script src="../scripts/reportGenerationAlvailability.js" defer></script>
+    <script src="../scripts/main.js" defer></script>
+</body>
+</html>

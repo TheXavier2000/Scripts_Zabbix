@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Zabbix</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<style>
+.sidebar { background-color: #1e293b; color: white; height: 100vh; }
+.right-panel { background-color: #f1f5f9; height: 100vh; overflow-y: auto; }
+.active-operation { background-color: #3b82f6; color: white; }
+.list-group-item-action { cursor: pointer; }
+</style>
+</head>
+<body x-data="dashboardApp()" x-init="init()">
+
+<div class="container-fluid h-100">
+  <div class="row h-100">
+
+    <!-- IZQUIERDA - OPERACIONES -->
+    <div class="col-2 sidebar p-3">
+      <h5>Operaciones</h5>
+      <ul class="list-group">
+        <template x-for="op in myOperations" :key="op.label">
+          <li class="list-group-item list-group-item-action"
+              :class="{'active-operation': currentOp === op.label}"
+              @click="currentOp = op.label">
+            <span x-text="op.label"></span>
+          </li>
+        </template>
+      </ul>
+      <button class="btn btn-danger mt-3" @click="logout()">Salir</button>
+    </div>
+
+    <!-- CENTRO - PANEL DINÁMICO -->
+    <div class="col-7 p-4 overflow-auto">
+      <h4 x-text="currentOp"></h4>
+
+      <!-- Mostrar panel según la operación seleccionada -->
+      <div x-show="currentOp === 'Agregar ICMP Host'">
+        <!-- Tu formulario ICMP Host -->
+        <div class="mb-3">
+          <label>Buscar Grupo</label>
+          <input type="text" class="form-control" placeholder="Escribe nombre grupo"
+                 x-model="groupSearch" @input.debounce.300ms="searchGroups()">
+          <ul class="list-group mt-1" x-show="groupResults.length>0">
+            <template x-for="g in groupResults" :key="g.id">
+              <li class="list-group-item list-group-item-action" @click="selectGroup(g)">
+                <span x-text="g.name + ' (ID: ' + g.id + ')'"></span>
+              </li>
+            </template>
+          </ul>
+        </div>
+
+        <div class="mb-3">
+          <label>Buscar Template</label>
+          <input type="text" class="form-control" placeholder="Escribe nombre template"
+                 x-model="templateSearch" @input.debounce.300ms="searchTemplates()">
+          <ul class="list-group mt-1" x-show="templateResults.length>0">
+            <template x-for="t in templateResults" :key="t.id">
+              <li class="list-group-item list-group-item-action" @click="selectTemplate(t)">
+                <span x-text="t.name + ' (ID: ' + t.id + ')'"></span>
+              </li>
+            </template>
+          </ul>
+        </div>
+
+        <button class="btn btn-primary mt-2" @click="executeOperation()">Ejecutar</button>
+        <div class="mt-4">
+          <h6>Log</h6>
+          <textarea class="form-control" rows="6" x-model="log" readonly></textarea>
+        </div>
+      </div>
+
+      <!-- Puedes agregar más paneles dinámicos aquí -->
+      <div x-show="currentOp === 'Agregar SNMP Host'">
+        <p>Panel para SNMP Host...</p>
+      </div>
+
+      <div x-show="currentOp === 'Otra Operación'">
+        <p>Panel para otra operación...</p>
+      </div>
+
+    </div>
+
+    <!-- DERECHA - HOSTS -->
+    <div class="col-3 right-panel p-3">
+      <h5>Hosts</h5>
+      <div class="mb-3">
+        <input type="file" class="form-control" @change="handleFileUpload($event)">
+      </div>
+      <table class="table table-sm">
+        <thead>
+          <tr><th>IP</th><th>Hostname</th></tr>
+        </thead>
+        <tbody>
+          <template x-for="host in hosts" :key="host.ip">
+            <tr>
+              <td x-text="host.ip"></td>
+              <td x-text="host.hostname"></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scripts modulares -->
+<script type="module" src="./js/auth.js"></script>
+<script type="module" src="./js/dataFetch.js"></script>
+<script type="module" src="./js/operations.js"></script>
+<script type="module" src="./js/dashboard.js"></script>
+
+</body>
+</html>

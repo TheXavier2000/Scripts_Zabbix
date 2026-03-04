@@ -1,0 +1,9 @@
+[
+    { "id": "1", "name": "Unavailable by ICMP ping" },
+    { "id": "2", "name": "No SNMP data collection" },
+    { "id": "3", "name": "Link Down" },
+    { "id": "4", "name": "High ICMP ping response time" },
+    { "id": "5", "name": "Space is critically low" },
+    { "id": "6", "name": "High ICMP ping loss" },
+    { "id": "7", "name": "High memory utilization" }
+]
